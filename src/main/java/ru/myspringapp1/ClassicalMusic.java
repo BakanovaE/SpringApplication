@@ -9,16 +9,16 @@ import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class ClassicalMusic implements Music {
     public List<ClassicalMusic> listOfClassicalMusic = new ArrayList<>();
     public String songName;
 
-    @PostConstruct
+
     public void doMyInit() {
         System.out.println("Initialisation method");
     }
-    @PreDestroy
+
     public void doMyDestroy() {
         System.out.println("Destroy method");
     }
@@ -46,6 +46,6 @@ public class ClassicalMusic implements Music {
 
     @Override
     public String toString() {
-        return "Classical Song" + songName;
+        return "Classical Song " + songName;
     }
 }
