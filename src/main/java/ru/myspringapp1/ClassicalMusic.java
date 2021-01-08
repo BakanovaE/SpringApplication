@@ -1,8 +1,11 @@
 package ru.myspringapp1;
 
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +13,15 @@ import java.util.List;
 public class ClassicalMusic implements Music {
     public List<ClassicalMusic> listOfClassicalMusic = new ArrayList<>();
     public String songName;
+
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Initialisation method");
+    }
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Destroy method");
+    }
 
     public ClassicalMusic(String songName) {
         this.songName = songName;
