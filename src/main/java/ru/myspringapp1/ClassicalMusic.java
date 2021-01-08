@@ -1,5 +1,6 @@
 package ru.myspringapp1;
 
+
 import org.springframework.stereotype.Component;
 
 @Component
